@@ -4,6 +4,9 @@
 
 Setting up the react app template usually takes a while, this template will help reduce the time to setup a react ui frontend
 
+## CI/CD
+Github Action
+
 ## API
 
 Use [GraphQL](https://graphql.org/)
