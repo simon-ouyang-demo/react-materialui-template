@@ -10,11 +10,11 @@ const cache = new InMemoryCache()
 
 const defaultOptions: DefaultOptions = {
   watchQuery: {
-    fetchPolicy: 'no-cache',
+    fetchPolicy: 'network-only',
     errorPolicy: 'all',
   },
   query: {
-    fetchPolicy: 'no-cache',
+    fetchPolicy: 'network-only',
     errorPolicy: 'all',
   },
 }
