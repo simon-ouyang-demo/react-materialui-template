@@ -1,9 +1,15 @@
 # React UI Template using Material UI
 
 ## Motivation
-Setting up the react app template usually takes a while, this template will greatly reduce the time to setup a react ui frontend
+
+Setting up the react app template usually takes a while, this template will help reduce the time to setup a react ui frontend
+
+## API
+
+Use [GraphQL](https://graphql.org/)
 
 ## Package Management
+
 Use [Yarn](https://yarnpkg.com/)
 
 ## UI Framework

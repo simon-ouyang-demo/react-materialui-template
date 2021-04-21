@@ -1,0 +1,35 @@
+name: Lint and Test
+# Only for pull requests to major branch
+on:
+  pull_request:
+    branches:
+      - develop
+      - main
+jobs:
+  lint_and_test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [12.x]
+    steps:
+      - name: Checkout branch
+        uses: actions/checkout@v2
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@master
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Check TypeScript types
+        run: yarn type-check
+
+      - name: Lint code
+        run: yarn lint
+
+      - name: Run unit tests
+        run: yarn test:coverage
+        env: 
+          SKIP_PREFLIGHT_CHECK: true

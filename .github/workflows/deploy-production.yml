@@ -1,0 +1,50 @@
+name: Deploy Production
+on:
+  release:
+    types: [released]
+    branches:
+      - main
+
+jobs:
+  deploy:
+    name: Deploy Web App to Production Environment
+    runs-on: ubuntu-latest
+    if: ${{ !github.event.release.prerelease }} # we only want to release to production for non-prereleased releases https://github.community/t5/GitHub-Actions/Release-Prerelease-action-triggers/m-p/42177
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.CI_AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.CI_AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ secrets.CI_AWS_DEFAULT_REGION }}
+          role-to-assume: ${{ secrets.PRODUCTION_AWS_ROLE_TO_ASSUME }}
+          role-external-id: cicd
+          role-duration-seconds: 1200
+          role-skip-session-tagging: true
+
+      - name: Install Packages
+        run: yarn install
+
+      - name: Build Web App
+        run: yarn build
+        env:
+          REACT_APP_ENVIRONMENT: production
+          REACT_APP_API_URL: ${{ secrets.API_PRODUCTION_URL }}} 
+          REACT_APP_SENTRY_DSN: ${{ secrets.SENTRY_DSN }}
+          SKIP_PREFLIGHT_CHECK: true
+          REACT_APP_LOG_LEVEL: error
+          REACT_APP_RELEASE_VERSION: v-0.1.0
+
+      - name: Deploy Web App
+        run: aws s3 sync ./build/ ${{ secrets.S3_PRODUCTION_BUCKET_URL }}} --acl public-read --sse AES256 --delete
+
+      - name: Slack Notification
+        uses: rtCamp/action-slack-notify@v2
+        env:
+          SLACK_CHANNEL: engineering-notifications
+          SLACK_COLOR: '#3278BD'
+          SLACK_MESSAGE: 'Deployed returns-portal-ui app production :rocket:'
+          SLACK_TITLE: Deployed returns-portal-ui To production
+          SLACK_WEBHOOK: ${{ secrets.SLACK_ENGINEERING_CHANNEL_WEBHOOK }}

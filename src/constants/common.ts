@@ -1,0 +1,7 @@
+export const SITE_NAME = 'React App'
+export const SITE_TYPE = 'website'
+export const SITE_DESCRIPTION = 'React App Template'
+export const SITE_KEYWORDS = 'React, Template'
+export const NAME = 'React Template'
+export const TITLE = 'React Template'
+export const IMAGE_URL = ''

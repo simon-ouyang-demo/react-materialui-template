@@ -1,0 +1,87 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "extends": [
+    "react-app",
+    "react-app/jest",
+    "eslint:recommended",
+    "plugin:import/recommended",
+    "plugin:import/typescript",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react/recommended",
+    "plugin:prettier/recommended",
+    "prettier",
+    "prettier/@typescript-eslint",
+    "prettier/react",
+    "plugin:jsx-a11y/recommended",
+    "plugin:react-hooks/recommended"
+  ],
+  "settings": {
+    "react": {
+      "version": "detect"
+    },
+    "import/resolver": {
+      "alias": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    },
+    "import/extensions": [".js", ".jsx", ".ts", ".tsx"],
+    "import/parsers": {
+      "@typescript-eslint/parser": [".ts", ".tsx"]
+    }
+  },
+  "env": {
+    "browser": true,
+    "node": true,
+    "es2020": true,
+    "jest": true
+  },
+  "globals": {
+    "__PATH_PREFIX__": true
+  },
+  "plugins": ["@typescript-eslint", "prettier", "react", "react-hooks", "jsx-a11y", "disable"],
+  "processor": "disable/disable",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 2018,
+    "sourceType": "module",
+    "project": "./tsconfig.json"
+  },
+  "rules": {
+    "curly": ["error"],
+    "no-restricted-globals": ["error", "location"],
+    "react/prop-types": "off",
+    "@typescript-eslint/ban-ts-comment": 0,
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/interface-name-prefix": "off",
+    "prettier/prettier": "error",
+    "no-console": "error", // Force user to log message directly in sentry.
+    "import/order": [
+      "error",
+      {
+        "groups": ["external", "unknown", "internal", "builtin", "index", "sibling", "parent"],
+        "newlines-between": "always"
+      }
+    ],
+    "import/no-named-as-default": 0
+  },
+  "overrides": [
+    {
+      "files": ["*.js"],
+      "rules": {
+        "@typescript-eslint/no-var-requires": "off"
+      }
+    },
+    {
+      "files": ["*.ts", "*.tsx"],
+      "rules": {
+        "@typescript-eslint/no-unused-vars": ["error", { "argsIgnorePattern": "^_" }]
+      }
+    }
+  ]
+}

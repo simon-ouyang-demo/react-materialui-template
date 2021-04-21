@@ -31,7 +31,7 @@ const WelcomePage = () => {
         <Typography variant="h3" gutterBottom>
           Welcome to Home
         </Typography>
-        <Typography variant="h5" gutterBottom>{`Retailer: ${hostName}`}</Typography>
+        <Typography variant="h5" gutterBottom>{`Hostname: ${hostName}`}</Typography>
       </Grid>
       <Grid container alignContent="center" justify="center">
         <Grid item>

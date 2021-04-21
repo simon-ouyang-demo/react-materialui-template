@@ -3,7 +3,7 @@ import { Grid, makeStyles } from '@material-ui/core'
 import { ErrorBoundary as SentryErrorBoundary } from '@sentry/react'
 import { ErrorBoundary as CommonErrorBoundary } from 'react-error-boundary'
 
-import { Body } from '../components'
+import { Body, SEO } from '../components'
 import { LayoutLoading, ErrorBoundaryFallback } from '../components/common'
 import { ENVIRONMENT } from '../constants'
 interface Props {
@@ -43,6 +43,7 @@ export default function MainLayout({ children }: Props) {
 
   return (
     <>
+      <SEO />
       <div className={classes.root}>
         <Grid container>
           <Grid className={classes.wrapper} item xs={12} md={12} lg={12}>
