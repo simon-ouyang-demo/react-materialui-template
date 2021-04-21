@@ -2,6 +2,42 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## UI Framework
+
+Use [material UI](https://material-ui.com/)
+
+## Logging
+
+Use [loglevel](https://www.npmjs.com/package/loglevel) for logging and disable the usage of console
+
+## Performance and Error Monitoring
+
+Use [Sentry](https://sentry.io/) for monitor the performance and track the error in deployment environment
+
+## Unit Testing
+
+Use [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/) for unit testing purpose.
+
+## Global State Management
+
+Use [React Context](https://reactjs.org/docs/context.html)
+
+## Routing
+
+Use [React Routing](https://reactrouter.com/)
+
+## Code Formatting
+
+Use [Prettier](https://prettier.io/)
+
+## Code Linter
+
+Use [EsLint](https://eslint.org/)
+
+## Error Boundary
+
+Use [react error boundary](https://github.com/bvaughn/react-error-boundary)
+
 ## Available Scripts
 
 In the project directory, you can run:

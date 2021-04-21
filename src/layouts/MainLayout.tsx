@@ -36,6 +36,9 @@ export default function MainLayout({ children }: Props) {
   /**
    * Warning: Suspense is still an experimental feature
    * https://reactjs.org/docs/concurrent-mode-suspense.html
+   *
+   * Avoid using ErrorBoundary from Sentry when environment is local
+   * Use react-error-boundary in local environment to avoid using class components
    */
 
   return (
