@@ -1,0 +1,130 @@
+{
+  "name": "returns-portal-ui",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@apollo/client": "^3.3.11",
+    "@aws-amplify/ui-react": "^1.0.4",
+    "@material-ui/core": "^4.11.0",
+    "@material-ui/icons": "^4.9.1",
+    "@material-ui/lab": "^4.0.0-alpha.56",
+    "@material-ui/pickers": "^3.2.10",
+    "@sentry/react": "^6.2.1",
+    "@sentry/tracing": "^6.2.1",
+    "@types/styled-components": "^5.1.7",
+    "aws-amplify": "^3.3.23",
+    "aws-amplify-react": "^4.2.27",
+    "axios": "0.19.2",
+    "clsx": "^1.1.1",
+    "graphql": "^15.5.0",
+    "lodash": "^4.17.19",
+    "loglevel": "^1.7.1",
+    "moment": "^2.29.1",
+    "polished": "^4.1.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-error-boundary": "^3.1.1",
+    "react-hot-loader": "^4.13.0",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "3.4.3",
+    "web-vitals": "^1.1.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --watchAll=false",
+    "test:coverage": "yarn test --coverage",
+    "eject": "react-scripts eject",
+    "analyze": "cra-bundle-analyzer",
+    "serve": "serve -s build",
+    "type-check": "tsc --noEmit",
+    "prettify": "prettier --single-quote  --no-semi --write \"src/**/*.{js,jsx,ts,tsx,css}\"",
+    "lint": "eslint \"src/**/*.{js,jsx,ts,tsx}\" --fix --ignore-path .gitignore",
+    "preinstall": "$npm_execpath --silent run checkyarn",
+    "postinstall": "patch-package",
+    "checkyarn": "echo \"$npm_execpath\" | grep -q \"yarn\\.js$\" || (echo '⚠️  Use yarn not npm! ⚠️ ' && echo && exit 1)"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@babel/core": "^7.10.4",
+    "@testing-library/jest-dom": "^5.11.0",
+    "@testing-library/react": "^11.0.2",
+    "@testing-library/react-hooks": "^3.3.0",
+    "@types/babel__core": "^7.1.9",
+    "@types/enzyme": "^3.10.5",
+    "@types/enzyme-adapter-react-16": "^1.0.6",
+    "@types/eslint": "^7.2.4",
+    "@types/eslint-plugin-prettier": "^3.1.0",
+    "@types/jest": "^26.0.3",
+    "@types/less": "^3.0.1",
+    "@types/lodash": "^4.14.157",
+    "@types/mdx-js__react": "^1.5.2",
+    "@types/node": "^14.0.14",
+    "@types/prettier": "^2.0.1",
+    "@types/react": "^17.0.3",
+    "@types/react-dom": "^16.9.8",
+    "@types/react-router-dom": "^5.1.7",
+    "@types/react-test-renderer": "^16.9.2",
+    "@types/testing-library__jest-dom": "^5.9.1",
+    "@types/testing-library__react": "^10.2.0",
+    "@types/testing-library__react-hooks": "^3.2.0",
+    "@typescript-eslint/eslint-plugin": "4",
+    "@typescript-eslint/parser": "^4.15.2",
+    "babel-loader": "^8.1.0",
+    "cra-bundle-analyzer": "^0.1.0",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.3",
+    "eslint": "7",
+    "eslint-config-prettier": "^6.12.0",
+    "eslint-config-standard-with-typescript": "^20.0.0",
+    "eslint-import-resolver-alias": "^1.1.2",
+    "eslint-plugin-disable": "^2.0.1",
+    "eslint-plugin-import": "2",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-node": "11",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-promise": "4",
+    "eslint-plugin-react": "^7.20.3",
+    "eslint-plugin-react-hooks": "^4.0.5",
+    "husky": "^4.2.5",
+    "identity-obj-proxy": "^3.0.0",
+    "lint-staged": "^10.2.9",
+    "patch-package": "^6.3.1",
+    "postcss-preset-env": "^6.7.0",
+    "postinstall-postinstall": "^2.1.0",
+    "prettier": "^2.0.5",
+    "react-app-rewire-alias": "^1.0.1",
+    "react-docgen-typescript-loader": "^3.7.2",
+    "react-test-renderer": "^16.13.1",
+    "serve": "^11.3.2",
+    "ts-jest": "^26.1.1",
+    "tslib": "^2.0.0",
+    "typescript": "^4.0.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged && yarn type-check && yarn test"
+    }
+  },
+  "lint-staged": {
+    "*.{md,html,css,scss,json}": "prettier --write",
+    "*.{js,jsx,ts,tsx}": [
+      "prettier --write",
+      "eslint \"src/**/*.{js,jsx,ts,tsx}\" --fix --cache --ignore-path .gitignore"
+    ]
+  }
+}
