@@ -1,6 +1,10 @@
-# Getting Started with Create React App
+# React UI Template using Material UI
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Motivation
+Setting up the react app template usually takes a while, this template will greatly reduce the time to setup a react ui frontend
+
+## Package Management
+Use [Yarn](https://yarnpkg.com/)
 
 ## UI Framework
 
