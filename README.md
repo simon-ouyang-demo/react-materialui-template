@@ -4,92 +4,226 @@
 
 Setting up the react app template usually takes a while, this template will help reduce the time to setup a react ui frontend
 
-## CI/CD
-Github Action
+# Getting Started with Create React App
 
-## API
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-Use [GraphQL](https://graphql.org/)
+## Requirements
 
-## Package Management
+- Node v12.18.0+
 
-Use [Yarn](https://yarnpkg.com/)
+## Coding Style guide
 
-## UI Framework
+- [AirBnB JavaScript Style Guide](https://github.com/airbnb/javascript)
 
-Use [material UI](https://material-ui.com/)
+  - naming conventions for variables and methods
+  - comments
+  - etc
 
-## Logging
+- TypeScript style guide is driven by eslint rules in this project
 
-Use [loglevel](https://www.npmjs.com/package/loglevel) for logging and disable the usage of console
+- [Airbnb React/JSX Style Guide](https://github.com/airbnb/javascript/tree/master/react)
+  - code structure
+  - etc
 
-## Performance and Error Monitoring
+## Tech Stack
 
-Use [Sentry](https://sentry.io/) for monitor the performance and track the error in deployment environment
+- Language [TypeScript](https://www.typescriptlang.org/)
+- UI Framework [Material UI](https://material-ui.com/)
+- Framework [Framework]([https://](https://github.com/facebook/create-react-app))
+- View [React](https://react.js)
+- Clint side router [Router](https://reach.tech/router))
+- Unit Testing Framework: [Jest](https://jestjs.io/)
+- Unit Testing Framework for UI:[React Testing Library](https://testing-library.com/docs/react-testing-library/intro)
+- Source Control: [Git](https://git-scm.com/)
+- Version control: [Git flow](https://nvie.com/posts/a-successful-git-branching-model/)
+- Logging: [LogLevel](https://www.npmjs.com/package/loglevel))
+- Performance and Error Monitoring [Sentry](https://sentry.io/)
+- Global State Management [React Context](https://reactjs.org/docs/context.html)
+- Code Formatting [Prettier](https://prettier.io/)
+- CI/CD Flow [Github Action](https://github.com/features/actions)
+- Dependency Management [Yarn](https://yarnpkg.com/)
+- IDE: VSCode (see below)
 
-## Unit Testing
+## Folder Structure Conventions
 
-Use [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/) for unit testing purpose.
+===============================
 
-## Global State Management
+> Folder structure options and naming conventions
 
-Use [React Context](https://reactjs.org/docs/context.html)
+### directory layout (group by file type)
 
-## Routing
+[Group by file type](https://reactjs.org/docs/faq-structure.html#grouping-by-file-type)
+    .
+    |-- .github                       # Folder for CI/CD Scripts
+    |-- build                         # Compiled files (alternatively `dist`)
+    |-- src                           # Source files (alternatively `lib` or `app`)
+         |-- page                     # The folder reflects the routes of the application. Each component inside this folder has its own route.
+               |-- domain folder      # Folder as logical segmentation of Page Component by domain
+         |-- component                # The components folder contains a collection of UI components like button, custom input field, modal, etc that will be shared and used across files in the project.
+               |-- domain folder      # Folder as logical segmentation of all components (except for page or container) by domain
+               |-- common             # Folder storing the shared components used by all components (except for container)
+         |-- constants                # Folder for constant used by the application
+         |-- contexts                 # Folder for react context and react context provider used by the application, each file represents each domain
+         |-- hooks                    # Folder for custom react hooks used by the application, each file represents an independent custom hook
+         |-- layouts                  # Folder for layout component as the container used by the application, each file represents an independent container
+         |-- resources                # Folder for media resources such as images, videos and etc
+         |-- data                     # Folder for data used by the application
+         |-- routers                  # Folder for page routes defined by each domain, each file represents a group of routes belonging to a domain
+         |-- types                    # Folder for custom types used by the application
+         |-- utils                    # Folder for utility methods used by the application
+    |-- public                        # Automated tests (alternatively `spec` or `tests`)
+    |-- package.json                  # Script for managing the project's dependencies, scripts, version and etc.
+    |-- .env.SAMPLE                   # Environment Variable
+    |-- jest.config.js                # Jest's configuration
+    |-- jest.setup.js                 # Jest Setup file
+    |-- tsconfig.json                 # TypeScript configuration file
+    |-- tsconfig.path.json            # TypeScript configuration subModule for baseUrl
+    |-- README.m                      # Description of the project
+    |-- yarn.lock                     # The file that is auto-generated and should be handled entirely by Yarn for dependency management
+    |-- .eslintrc.json                # Eslint configuration file
+    |-- .eslintignore                 # It is a plain text file where each line is a glob pattern indicating which paths should be omitted from linting
+    |-- .prettier.config.js           # Prettier Configuration file
+    |-- .perttierignore.js            # It is a plain text file where each line is a glob pattern indicating which paths should be omitted from prettier
 
-Use [React Routing](https://reactrouter.com/)
+> Use short lowercase names at least for folders
 
-## Code Formatting
+## Prerequisites
 
-Use [Prettier](https://prettier.io/)
+### Disable Case-Insensitivity in Git
 
-## Code Linter
+```
+git config --global core.ignorecase false
+```
 
-Use [EsLint](https://eslint.org/)
+### Node.js, nvm and yarn
 
-## Error Boundary
+- Install node.js with [nvm](https://github.com/creationix/nvm)
+- Use [node 12](https://nodejs.org/en/about/releases/) (current node LTS version)
 
-Use [react error boundary](https://github.com/bvaughn/react-error-boundary)
+### VSCode Setup
 
-## Available Scripts
+- Install [VSCode](https://code.visualstudio.com/)
+- Install [VSCode command line tool](https://code.visualstudio.com/docs/setup/mac#_launching-from-the-command-line)
+- Install the following extensions from command line
 
-In the project directory, you can run:
+  ```sh
+  code --install-extension EditorConfig.EditorConfig \
+  --install-extension mikestead.dotenv \
+  --install-extension dbaeumer.vscode-eslint \
+  --install-extension eamodio.gitlens \
+  --install-extension streetsidesoftware.code-spell-checker \
+  --install-extension esbenp.prettier-vscode
+  --install-extension silvenon.mdx
+  ```
 
-### `yarn start`
+### IntelliJ WebStorm Setup
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- Install [Webstorm](https://www.jetbrains.com/webstorm/download/#section=mac)
+- Install [Prettier](https://plugins.jetbrains.com/plugin/10456-prettier) for IDE.
+- To set up prettier to lint on save go to `Preferences > Languages & Frameworks > Prettier` select `on Save`.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `yarn test`
+## 🚀 Quick start
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Start the project (dev)
 
-### `yarn build`
+1. run `yarn`
+1. run `yarn start`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Test the project
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. run `yarn test` for a single run or `yarn test:watch` to update while coding
+2. run `yarn test:coverage` to get a coverage report
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Testing production build locally
 
-### `yarn eject`
+To test the production build locally,
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- Run `yarn serve`
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Open `http://localhost:5000`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Lint and unit testing
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- To format code and run lint `yarn lint`
 
-## Learn More
+- To run unit test `yarn test`
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Reporting errors and exceptions
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+We use [Sentry](https://sentry.io/) to reporting errors and exceptions
+
+### Analysis webpack bundle
+
+- Run `yarn analyze`
+
+## Github secret keys/env variables
+
+### Github secret keys
+
+```
+CI_AWS_ACCESS_KEY_ID
+CI_AWS_SECRET_ACCESS_KEY
+CI_AWS_DEFAULT_REGION
+DEVELOPMENT_AWS_ROLE_TO_ASSUME
+STAGING_AWS_ROLE_TO_ASSUME
+PRODUCTION_AWS_ROLE_TO_ASSUME
+```
+
+Environment variables
+
+```
+REACT_APP_ENVIRONMENT
+REACT_APP_API_URL
+REACT_APP_AWS_REGION
+REACT_APP_AWS_USER_POOL_ID
+REACT_APP_AWS_APP_CLIENT_ID
+REACT_APP_SENTRY_DSN
+```
+
+## Components
+
+Reusable or shared components go in `src/components/common/`. These are components that are abstracted for reuse in different parts of the applicatioon. Components that are not resusable should be created in their respective module subfolder, e.g. `src/components/return-cast-form`
+
+### About .env
+
+The .env file is named with the pattern: `.env.ENV_NAME`.
+
+List of environments:
+
+- develop
+- staging
+- production
+
+## Building
+
+Additional build settings can be found in the `package.json`:
+
+- [patch-package](https://github.com/ds300/patch-package) is used to apply custom patches to npm dependencies such as `react-scripts`. We use patches to fix or workaround issues in 3rd party packages that are not included in any official release yet. This runs right after every `npm install` automatically.
+- The [browserslist](https://github.com/browserslist/browserslist) entry in defines the list of supported browsers. Changing this value might result in Babel choosing different environment settings when transpiling the project.
+- To prevent invalid code from being checked in, commits are checked using [husky](https://www.npmjs.com/package/husky) pre-commit hooks. [lint-staged](https://github.com/okonet/lint-staged) speeds things up by only looking at git staged files.
+
+## Environments & Deployment
+
+Each main branch represents a deployment environment. Merging into the respective branch will automatically trigger the deployment without further intervention necessary:
+
+| Branch        | Environment Name | Description                                               | Environment URL                              |
+| ------------- | ---------------- | --------------------------------------------------------- | -------------------------------------------- |
+| `development` | Development      | Contains latest feature in development                    | <https://yourDomainName.portals.development.returnbear.com/> |
+| `main`        | Stage            | Used for pen-testing, and for staging production releases | <https://yourDomainName.portals.staging.returnbear.com/>    |
+| `main`        | Production       | Official production release                               | <https://yourDomainName.portals.returnbear.com/>  |
+
+## Domain Configuration
+
+1) Lands on the the Django Admin URL
+2) Go to Stores Table
+3) For each store, update themeConfig, attributes are below:
+
+- backgroundColor
+- backgroundImageUrl
+- headerImageUrl
+- headerBackgroundColor
+- logoImageUrl
+- customerServiceEmail
+  
