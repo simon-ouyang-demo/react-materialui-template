@@ -54,6 +54,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ### directory layout (group by file type)
 
 [Group by file type](https://reactjs.org/docs/faq-structure.html#grouping-by-file-type)
+```
     .
     +-- .github                       # Folder for CI/CD Scripts
     +-- build                         # Compiled files (alternatively `dist`)
@@ -85,7 +86,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
     +-- .eslintignore                 # It is a plain text file where each line is a glob pattern indicating which paths should be omitted from linting
     +-- .prettier.config.js           # Prettier Configuration file
     +-- .perttierignore.js            # It is a plain text file where each line is a glob pattern indicating which paths should be omitted from prettier
-
+```
 > Use short lowercase names at least for folders
 
 ## Prerequisites
