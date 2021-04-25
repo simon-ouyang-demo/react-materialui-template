@@ -51,7 +51,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 > Folder structure options and naming conventions
 
-### directory layout (group by file type)
+### Sample directory layout (group by file type)
 
 [Group by file type](https://reactjs.org/docs/faq-structure.html#grouping-by-file-type)
 ```
@@ -163,25 +163,9 @@ We use [Sentry](https://sentry.io/) to reporting errors and exceptions
 
 ### Github secret keys
 
-```
-CI_AWS_ACCESS_KEY_ID
-CI_AWS_SECRET_ACCESS_KEY
-CI_AWS_DEFAULT_REGION
-DEVELOPMENT_AWS_ROLE_TO_ASSUME
-STAGING_AWS_ROLE_TO_ASSUME
-PRODUCTION_AWS_ROLE_TO_ASSUME
-```
 
-Environment variables
+### Environment variables
 
-```
-REACT_APP_ENVIRONMENT
-REACT_APP_API_URL
-REACT_APP_AWS_REGION
-REACT_APP_AWS_USER_POOL_ID
-REACT_APP_AWS_APP_CLIENT_ID
-REACT_APP_SENTRY_DSN
-```
 
 ## Components
 
@@ -211,20 +195,9 @@ Each main branch represents a deployment environment. Merging into the respectiv
 
 | Branch        | Environment Name | Description                                               | Environment URL                              |
 | ------------- | ---------------- | --------------------------------------------------------- | -------------------------------------------- |
-| `development` | Development      | Contains latest feature in development                    | <https://yourDomainName.portals.development.returnbear.com/> |
-| `main`        | Stage            | Used for pen-testing, and for staging production releases | <https://yourDomainName.portals.staging.returnbear.com/>    |
-| `main`        | Production       | Official production release                               | <https://yourDomainName.portals.returnbear.com/>  |
+| `development` | Development      | Contains latest feature in development                    | <https://development.domain-name.com/> |
+| `main`        | Stage            | Used for pen-testing, and for staging production releases | <https://staging.domain-name.com/>    |
+| `main`        | Production       | Official production release                               | <https://google.domain-name.com/>  |
 
-## Domain Configuration
 
-1) Lands on the the Django Admin URL
-2) Go to Stores Table
-3) For each store, update themeConfig, attributes are below:
-
-- backgroundColor
-- backgroundImageUrl
-- headerImageUrl
-- headerBackgroundColor
-- logoImageUrl
-- customerServiceEmail
   
