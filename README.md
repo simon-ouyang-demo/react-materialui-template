@@ -42,8 +42,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - Global State Management [React Context](https://reactjs.org/docs/context.html)
 - Code Formatting [Prettier](https://prettier.io/)
 - CI/CD Flow [Github Action](https://github.com/features/actions)
-- Dependency Management [Yarn](https://yarnpkg.com/)
-- IDE: VSCode (see below)
+- Package Management [Yarn](https://yarnpkg.com/)
 
 ## Folder Structure Conventions
 
@@ -159,10 +158,9 @@ We use [Sentry](https://sentry.io/) to reporting errors and exceptions
 
 - Run `yarn analyze`
 
-## Github secret keys/env variables
+## Github/Gitlab secret keys/env variables
 
-### Github secret keys
-
+### Github/Gitlab secret keys
 
 ### Environment variables
 
@@ -196,7 +194,7 @@ Each main branch represents a deployment environment. Merging into the respectiv
 | Branch        | Environment Name | Description                                               | Environment URL                              |
 | ------------- | ---------------- | --------------------------------------------------------- | -------------------------------------------- |
 | `development` | Development      | Contains latest feature in development                    | <https://development.domain-name.com/> |
-| `main`        | Stage            | Used for pen-testing, and for staging production releases | <https://staging.domain-name.com/>    |
+| `staging`     | Stage            | Used for pen-testing, and for staging production releases | <https://staging.domain-name.com/>    |
 | `main`        | Production       | Official production release                               | <https://google.domain-name.com/>  |
 
 
