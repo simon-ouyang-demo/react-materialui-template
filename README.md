@@ -55,36 +55,36 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 [Group by file type](https://reactjs.org/docs/faq-structure.html#grouping-by-file-type)
     .
-    |-- .github                       # Folder for CI/CD Scripts
-    |-- build                         # Compiled files (alternatively `dist`)
-    |-- src                           # Source files (alternatively `lib` or `app`)
-         |-- page                     # The folder reflects the routes of the application. Each component inside this folder has its own route.
-               |-- domain folder      # Folder as logical segmentation of Page Component by domain
-         |-- component                # The components folder contains a collection of UI components like button, custom input field, modal, etc that will be shared and used across files in the project.
-               |-- domain folder      # Folder as logical segmentation of all components (except for page or container) by domain
-               |-- common             # Folder storing the shared components used by all components (except for container)
-         |-- constants                # Folder for constant used by the application
-         |-- contexts                 # Folder for react context and react context provider used by the application, each file represents each domain
-         |-- hooks                    # Folder for custom react hooks used by the application, each file represents an independent custom hook
-         |-- layouts                  # Folder for layout component as the container used by the application, each file represents an independent container
-         |-- resources                # Folder for media resources such as images, videos and etc
-         |-- data                     # Folder for data used by the application
-         |-- routers                  # Folder for page routes defined by each domain, each file represents a group of routes belonging to a domain
-         |-- types                    # Folder for custom types used by the application
-         |-- utils                    # Folder for utility methods used by the application
-    |-- public                        # Automated tests (alternatively `spec` or `tests`)
-    |-- package.json                  # Script for managing the project's dependencies, scripts, version and etc.
-    |-- .env.SAMPLE                   # Environment Variable
-    |-- jest.config.js                # Jest's configuration
-    |-- jest.setup.js                 # Jest Setup file
-    |-- tsconfig.json                 # TypeScript configuration file
-    |-- tsconfig.path.json            # TypeScript configuration subModule for baseUrl
-    |-- README.m                      # Description of the project
-    |-- yarn.lock                     # The file that is auto-generated and should be handled entirely by Yarn for dependency management
-    |-- .eslintrc.json                # Eslint configuration file
-    |-- .eslintignore                 # It is a plain text file where each line is a glob pattern indicating which paths should be omitted from linting
-    |-- .prettier.config.js           # Prettier Configuration file
-    |-- .perttierignore.js            # It is a plain text file where each line is a glob pattern indicating which paths should be omitted from prettier
+    +-- .github                       # Folder for CI/CD Scripts
+    +-- build                         # Compiled files (alternatively `dist`)
+    +-- src                           # Source files (alternatively `lib` or `app`)
+    |    +-- page                     # The folder reflects the routes of the application. Each component inside this folder has its own route.
+    |    |     +-- domain folder      # Folder as logical segmentation of Page Component by domain
+    |    +-- component                # The components folder contains a collection of UI components like button, custom input field, modal, etc that will be shared and used across files in the project.
+    |    |      +-- domain folder      # Folder as logical segmentation of all components (except for page or container) by domain
+    |    |      +-- common             # Folder storing the shared components used by all components (except for container)
+    |    +-- constants                # Folder for constant used by the application
+    |    +-- contexts                 # Folder for react context and react context provider used by the application, each file represents each domain
+    |    +-- hooks                    # Folder for custom react hooks used by the application, each file represents an independent custom hook
+    |    +-- layouts                  # Folder for layout component as the container used by the application, each file represents an independent container
+    |    +-- resources                # Folder for media resources such as images, videos and etc
+    |    +-- data                     # Folder for data used by the application
+    |    +-- routers                  # Folder for page routes defined by each domain, each file represents a group of routes belonging to a domain
+    |    +-- types                    # Folder for custom types used by the application
+    |    +-- utils                    # Folder for utility methods used by the application
+    +-- public                        # Automated tests (alternatively `spec` or `tests`)
+    +-- package.json                  # Script for managing the project's dependencies, scripts, version and etc.
+    +-- .env.SAMPLE                   # Environment Variable
+    +-- jest.config.js                # Jest's configuration
+    +-- jest.setup.js                 # Jest Setup file
+    +-- tsconfig.json                 # TypeScript configuration file
+    +-- tsconfig.path.json            # TypeScript configuration subModule for baseUrl
+    +-- README.m                      # Description of the project
+    +-- yarn.lock                     # The file that is auto-generated and should be handled entirely by Yarn for dependency management
+    +-- .eslintrc.json                # Eslint configuration file
+    +-- .eslintignore                 # It is a plain text file where each line is a glob pattern indicating which paths should be omitted from linting
+    +-- .prettier.config.js           # Prettier Configuration file
+    +-- .perttierignore.js            # It is a plain text file where each line is a glob pattern indicating which paths should be omitted from prettier
 
 > Use short lowercase names at least for folders
 
